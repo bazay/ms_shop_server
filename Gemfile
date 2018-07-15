@@ -4,6 +4,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.4.1'
 
+gem 'annotate'
+gem 'faker'
 gem 'rails', '~> 5.2.0'
 gem 'sqlite3'
 gem 'puma', '~> 3.11'
@@ -19,6 +21,8 @@ group :development, :test do
   gem 'pry'
   gem 'rspec-rails'
   gem 'rspec-its'
+  gem 'rspec-collection_matchers'
+  gem 'factory_bot_rails'
 end
 
 group :development do

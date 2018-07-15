@@ -42,3 +42,11 @@ the expected totals:
 
 I have chosen to create a small Rails application with ActiveRecord over a Ruby gem for the purpose that this project can be extended in the future if need be and the nature of such a project in my opinion would serve well as a web based application.
 Furthermore, the task requires states for an UI component and a web interface is much more user-friendly than a CLI interface.
+
+### Models
+
+The annotate gem has been implemented in order to clearly display the table columns within each model file.
+
+**Product**
+
+Stores all the information for each product as required by the task. An index has been created for the `code` column as the task requires products be searchable by their code and thus is more performant particularly as the product database becomes larger.
