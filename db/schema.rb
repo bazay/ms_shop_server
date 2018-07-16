@@ -12,9 +12,12 @@
 
 ActiveRecord::Schema.define(version: 2018_07_16_014807) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "basket_items", force: :cascade do |t|
-    t.integer "basket_id"
-    t.integer "product_id"
+    t.bigint "basket_id"
+    t.bigint "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["basket_id"], name: "index_basket_items_on_basket_id"
@@ -35,4 +38,6 @@ ActiveRecord::Schema.define(version: 2018_07_16_014807) do
     t.index ["code"], name: "index_products_on_code"
   end
 
+  add_foreign_key "basket_items", "baskets"
+  add_foreign_key "basket_items", "products"
 end

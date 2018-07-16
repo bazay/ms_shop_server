@@ -9,7 +9,7 @@
       <%= render 'basket_item', product: product %>
     <% end %>
   <% else %>
-    <p><%= I18n.t('your_basket_is_empty') %></p>
+    <%= render 'empty_basket' %>
   <% end %>
 
   <li class="list-group-item d-flex justify-content-between bg-light">
