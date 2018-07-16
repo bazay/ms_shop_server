@@ -1,6 +1,8 @@
 ![ms-digital-labs](https://image.ibb.co/fDufp8/Screen_Shot_2018_07_13_at_23_03_10.png
 )
 
+**By Baron Bloomer**
+
 ### Requirements
 
 M&S Digital Labs have decided to open a hyper-focussed online shop that sells
@@ -51,10 +53,22 @@ The annotate gem has been implemented in order to clearly display the table colu
 
 A basket can hold a number of basket items i.e. products
 
-**Basket Item**
+**BasketItem**
 
 Facilitates baskets with the ability to store products. It's not required by the task, however it may be a good idea to add a `quantity` column to this table to more efficiently manage products within a basket.
 
 **Product**
 
 Stores all the information for each product as required by the task. An index has been created for the `code` column as the task requires products be searchable by their code and thus is more performant particularly as the product database becomes larger.
+
+### Service Objects
+
+**BasketPriceCalculator**
+
+Receives an instance of basket and calculates `product_total`, `delivery_price`, and `basket_total` for that basket. These methods are available on the `Basket` model provided via the `BasketPriceCalculation` mixin.
+
+### Query Objects
+
+**ProductCatalogueQuery**
+
+Provides logic for querying all products or products by their code. The `#products` query should include pagination for performance benefit but is not in the scope of the task.

@@ -13,7 +13,7 @@
 FactoryBot.define do
   factory :product do
     product_name { Faker::Commerce.product_name }
-    code { Faker::Code.asin.first(3) }
+    sequence(:code) { |n| "P#{format('%02d', n)}" }
     price { Faker::Commerce.price(1..99.0, false) }
   end
 end
