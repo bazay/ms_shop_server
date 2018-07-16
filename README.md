@@ -1,7 +1,6 @@
-![ms-digital-labs](https://image.ibb.co/fDufp8/Screen_Shot_2018_07_13_at_23_03_10.png
-)
+![ms-digital-labs](https://image.ibb.co/fDufp8/Screen_Shot_2018_07_13_at_23_03_10.png)
 
-**By Baron Bloomer**
+**Baron Bloomer**
 
 ### Requirements
 

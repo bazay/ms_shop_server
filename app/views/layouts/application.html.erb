@@ -1,17 +1,21 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang='en'>
   <head>
-    <title>MsShopServer</title>
+    <title>MS Online Store</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all' %>
+    <link href="form-validation.css" rel="stylesheet">
   </head>
 
-  <body>
-    <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, class: name %>
-    <% end %>
-    <%= yield %>
+  <body class="bg-light">
+    <div class="container">
+      <%= render 'layouts/flash_messages' %>
+
+      <%= yield %>
+
+      <%= render 'layouts/footer' %>
+    </div>
   </body>
 </html>

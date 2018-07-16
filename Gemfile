@@ -13,6 +13,9 @@ gem 'sass-rails', '~> 5.0'
 gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
+gem 'bootstrap'
+gem 'jquery-rails'
+
 # Test
 gem 'rubocop', require: false
 gem 'rubocop-rspec'

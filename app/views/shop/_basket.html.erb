@@ -1,0 +1,27 @@
+<h4 class="d-flex justify-content-between align-items-center mb-3">
+  <span class="text-muted">Your Basket</span>
+  <span class="badge badge-secondary badge-pill"><%= current_basket.products.count %></span>
+</h4>
+
+<ul class="list-group mb-3">
+  <% if current_basket.products.any? %>
+    <% current_basket.products.each do |product| %>
+      <%= render 'basket_item', product: product %>
+    <% end %>
+  <% else %>
+    <p><%= I18n.t('your_basket_is_empty') %></p>
+  <% end %>
+
+  <li class="list-group-item d-flex justify-content-between bg-light">
+    <div>
+      <span class="my-0">Delivery</span>
+    </div>
+    <span class="text-muted"><%= number_to_currency(current_basket.delivery_price, unit: current_currency_symbol) %></span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between">
+    <div>
+      <h6 class="my-0">Total (GBP)</h6>
+    </div>
+    <strong><%= number_to_currency(current_basket.basket_total, unit: current_currency_symbol) %></strong>
+  </li>
+</ul>

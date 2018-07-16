@@ -1,49 +1,36 @@
-<h1>Shop</h1>
-<hr />
-<h3>Product Catalog</h3>
-<% if @products.any? %>
-  <table>
-    <tr>
-      <th>Product</th>
-      <th>Code</th>
-      <th>Price</th>
-    </tr>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= product.product_name %></td>
-        <td><%= product.code %></td>
-        <td><%= number_to_currency(product.price, unit: current_currency_symbol) %></td>
-      </tr>
+<div class="py-5 text-center">
+  <%= image_tag 'ms_logo.png', alt: 'ms-online-shop', class: 'd-block mx-auto shop-image' %>
+  <h2>Shop</h2>
+  <p class="lead"><%= I18n.t('use_the_product_catalog_description') %></p>
+</div>
+
+<div class="row">
+  <div class="col-md-4 order-md-2 mb-4">
+    <%= render 'basket' %>
+    <%#= render 'clear_basket' %>
+  </div>
+  <div class="col-md-8 order-md-1">
+    <h4 class="mb-3">Product Catalog</h4>
+    <% if @products.any? %>
+      <table class='table table-bordered'>
+        <thead class='thead-light'>
+          <tr>
+            <th>Product</th>
+            <th>Code</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <% @products.each do |product| %>
+          <tr>
+            <td><%= product.product_name %></td>
+            <td><%= product.code %></td>
+            <td><%= number_to_currency(product.price, unit: current_currency_symbol) %></td>
+          </tr>
+        <% end %>
+      </table>
+      <%= render 'add_basket_item' %>
+    <% else %>
+      <p><%= I18n.t('no_products_to_show') %></p>
     <% end %>
-  </table>
-<% else %>
-  <p><%= I18n.t('no_products_to_show') %></p>
-<% end %>
-
-<%= form_for current_basket do |f| %>
-  <%= f.text_field :product_code %>
-  <%= f.submit %>
-<% end %>
-
-<h3>Your Basket</h3>
-<% if current_basket.products.any? %>
-  <table>
-    <tr>
-      <th>Products</th>
-      <th>Price</th>
-    </tr>
-    <tr>
-      <td><%= formatted_product_codes(current_basket.products) %></td>
-      <td><%= number_to_currency(current_basket.product_total, unit: current_currency_symbol) %></td>
-    </tr>
-    <tr>
-      <th>Delivery price</th>
-      <td><%= number_to_currency(current_basket.delivery_price, unit: current_currency_symbol) %></td>
-    </tr>
-    <tr>
-      <th>Basket Total</th>
-      <td><%= number_to_currency(current_basket.basket_total, unit: current_currency_symbol) %></td>
-  </table>
-<% else %>
-  <p><%= I18n.t('your_basket_is_empty') %></p>
-<% end %>
+  </div>
+</div>

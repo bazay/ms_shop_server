@@ -1,0 +1,8 @@
+<%= form_for current_basket, html: { class: 'card p-2' } do |f| %>
+  <div class='input-group'>
+    <%= f.text_field :product_code, placeholder: I18n.t('add_a_product_code'), class: 'form-control' %>
+    <div class='input-group-append'>
+      <%= f.submit 'Add to basket', class: 'btn btn-secondary' %>
+    </div>
+  </div>
+<% end %>

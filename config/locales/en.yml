@@ -1,6 +1,8 @@
 en:
+  add_a_product_code: Add a product code
   no_products_to_show: No products to show
   your_basket_is_empty: Your basket is empty
   product_code_doesnt_match: Product code doesn't match
   successfully_added_item_to_basket: Successfully added item to your basket
   there_was_a_problem_adding_the_item_to_your_basket: There was a problem adding the item to your basket
+  use_the_product_catalog_description: Use the Product Catalog to find the code of the product you would like then type it in the form below then click the button to add it to your cart.
