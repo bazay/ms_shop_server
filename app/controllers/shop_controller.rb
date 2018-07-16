@@ -1,12 +1,11 @@
 class ShopController < ApplicationController
   def index
-    @products = product_catalogue.products
-    current_basket.products = @products
+    @products = product_catalog.products
   end
 
   private
 
-  def product_catalogue
-    @product_catalogue ||= ProductCatalogueQuery.new
+  def product_catalog
+    @product_catalog ||= ProductCatalogQuery.new
   end
 end

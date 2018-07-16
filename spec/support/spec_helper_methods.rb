@@ -1,3 +1,3 @@
-def dispatch(action = :index, params = {})
-  get action, params: params
+def dispatch(method = :get, action = :index, params = {})
+  send method, action, params: params
 end

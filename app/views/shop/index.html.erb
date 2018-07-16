@@ -1,6 +1,6 @@
 <h1>Shop</h1>
 <hr />
-<h3>Product Catalogue</h3>
+<h3>Product Catalog</h3>
 <% if @products.any? %>
   <table>
     <tr>
@@ -18,6 +18,11 @@
   </table>
 <% else %>
   <p><%= I18n.t('no_products_to_show') %></p>
+<% end %>
+
+<%= form_for current_basket do |f| %>
+  <%= f.text_field :product_code %>
+  <%= f.submit %>
 <% end %>
 
 <h3>Your Basket</h3>

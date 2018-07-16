@@ -69,6 +69,6 @@ Receives an instance of basket and calculates `product_total`, `delivery_price`,
 
 ### Query Objects
 
-**ProductCatalogueQuery**
+**ProductCatalogQuery**
 
 Provides logic for querying all products or products by their code. The `#products` query should include pagination for performance benefit but is not in the scope of the task.

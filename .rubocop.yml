@@ -24,5 +24,14 @@ Metrics/BlockLength:
 Metrics/LineLength:
   Max: 120
 
+RSpec/ContextWording:
+  Prefixes:
+    - with
+    - without
+    - when
+    - and
+    - but
 RSpec/LetSetup:
   Enabled: false
+RSpec/NestedGroups:
+  Max: 5
