@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_15_215029) do
+ActiveRecord::Schema.define(version: 2018_07_16_014807) do
+
+  create_table "basket_items", force: :cascade do |t|
+    t.integer "basket_id"
+    t.integer "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["basket_id"], name: "index_basket_items_on_basket_id"
+    t.index ["product_id"], name: "index_basket_items_on_product_id"
+  end
+
+  create_table "baskets", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "product_name"
     t.string "code"
@@ -19,4 +34,5 @@ ActiveRecord::Schema.define(version: 2018_07_15_215029) do
     t.datetime "updated_at", null: false
     t.index ["code"], name: "index_products_on_code"
   end
+
 end

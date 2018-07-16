@@ -47,6 +47,14 @@ Furthermore, the task requires states for an UI component and a web interface is
 
 The annotate gem has been implemented in order to clearly display the table columns within each model file.
 
+**Basket**
+
+A basket can hold a number of basket items i.e. products
+
+**Basket Item**
+
+Facilitates baskets with the ability to store products. It's not required by the task, however it may be a good idea to add a `quantity` column to this table to more efficiently manage products within a basket.
+
 **Product**
 
 Stores all the information for each product as required by the task. An index has been created for the `code` column as the task requires products be searchable by their code and thus is more performant particularly as the product database becomes larger.

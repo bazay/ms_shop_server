@@ -11,6 +11,9 @@
 #
 
 class Product < ApplicationRecord
+  has_many :basket_items, dependent: :destroy
+  has_many :baskets, through: :basket_items
+
   validates :product_name, presence: true, allow_blank: false
   validates :code, uniqueness: true, presence: true, allow_blank: false
   validates :price, numericality: { greater_than: 0 }
